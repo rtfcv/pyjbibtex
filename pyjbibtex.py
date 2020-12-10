@@ -73,7 +73,7 @@ def modify_bib(bibbasename, suffix='-mod', runanyway=False):
             # p = regex.compile(r'\p{Script=Han}+')
             # define the Kanji name as below
             # it may be better to use regex module...
-            kanjiname = re.compile(r'[一-龥]+.,[ ,一-龥,ぁ-ん,[ァ-ン]]+')
+            kanjiname = re.compile(r'[一-龥]+.,[ 一-龥ぁ-んァ-ン]+')
 
             line = True
             while (line):
