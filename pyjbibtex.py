@@ -55,10 +55,10 @@ def modify_bib(bibbasename, suffix='-mod', runanyway=False):
     print(f'modding {orgfname} ...')
 
     # check the date of original and modded bib
-    orgtime = os.stat(orgfname).st_mtime 
+    orgtime = os.stat(orgfname).st_mtime
     modtime = 0
     try:
-        modtime = os.stat(outfname).st_mtime 
+        modtime = os.stat(outfname).st_mtime
     except:
         print(f'no such file: {outfname} but do we need to care?')
 
@@ -73,7 +73,7 @@ def modify_bib(bibbasename, suffix='-mod', runanyway=False):
             # p = regex.compile(r'\p{Script=Han}+')
             # define the Kanji name as below
             # it may be better to use regex module...
-            kanjiname = re.compile(r'[一-龥]+.,[ ,一-龥]+')
+            kanjiname = re.compile(r'[一-龥]+.,[ ,一-龥,ぁ-ん,[ァ-ン]]+')
 
             line = True
             while (line):
